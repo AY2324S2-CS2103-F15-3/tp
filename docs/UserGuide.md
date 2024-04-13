@@ -187,7 +187,7 @@ Examples:
 ### Searching applicants by notes : `search`
 Search through contact list based on what note the applicant contains.
 
-Format: `search /Note <ApplicantNote>`
+Format: `search /note <ApplicantNote>`
 
 * Searches the contact list based on the `<ApplicantNote>` provided.
 * Possible values for `<ApplicantNote>` can be any fully filled or partially filled note that exists within an Applicant in the current contact list.
