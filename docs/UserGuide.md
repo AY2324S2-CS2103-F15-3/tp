@@ -160,17 +160,16 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd applicant in the HRConnect.
 * `find Betsy` followed by `delete 1` deletes the 1st applicant in the results of the `find` command.
 
-### Filtering applicants by tag : `/filter`
-Filter through contact list based on what role or stage the applicant is in.
+### Filtering applicants by stage : `filter`
+Filter through contact list based on what stage the applicant is in.
 
-Format: `/filter <Tag>`
+Format: `filter /stage <ApplicantStage>`
 
-* Filters the contact list based on the `<Tag>` provided.
-* Possible values for `<Tag>` are `Initial Application`, `Technical Assessment`, `Interview`, `Decision & Offer`.
+* Filters the contact list based on the `<ApplicantStage>` provided.
+* Possible values for `<Applicant>` are `Initial Application`, `Technical Assessment`, `Interview`, `Decision & Offer`.
 
 Examples:
 * `filter /stage Interview` filters the contact list to show only applicants in the Interview stage.
-* `filter /role SWE` filters the contact list to show only applicants who applied for SWE role.
 
 ### Adding notes to applicants by tag : `/note`
 Facilitates the addition of notes or comments to individual applicant entries.
@@ -184,6 +183,18 @@ Format: `note Index /note <Note>`
 
 Examples:
 * `note 1 /note S/Pass Holder` will add the note “S/Pass Holder” to the applicant identified by Index 1.
+
+### Searching applicants by notes : `search`
+Search through contact list based on what note the applicant contains.
+
+Format: `search /Note <ApplicantNote>`
+
+* Searches the contact list based on the `<ApplicantNote>` provided.
+* Possible values for `<ApplicantNote>` can be any fully filled or partially filled note that exists within an Applicant in the current contact list.
+* If no note is provided after the prefix `search /note`, the search result will return all applicants
+
+Examples:
+* `search /note Promising applicant` searches and fetches applicant with the note `Promising applicant`
 
 #### Adding date to notes
 * An optional `date` can be attached to the note when using the note command.
@@ -266,7 +277,8 @@ Action | Format, Examples
 **List** | `list`
 **Help** | `help`
 **Exit** | `exit`
-**Filter** | `/filter <Tag>`  <br> e.g., `filter /stage Initial Application`
+**Filter** | `filter /stage <ApplicantStage>`  <br> e.g., `filter /stage Initial Application`
+**Search** | `search /note <ApplicantNote>` <br> e.g.,  `search /note Promising applicant`
 **Note** | `note <ApplicationId> /note <Note>`  <br> e.g., `note 1 /note S/Pass Holder`
 **Export** | `export <FileName>` <br> e.g., `export saved_contacts`
 **Import** | `import`
